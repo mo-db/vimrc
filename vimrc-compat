@@ -1,0 +1,47 @@
+" [vim-plug]
+call plug#begin()
+Plug 'habamax/vim-habamax'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'junegunn/seoul256.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'nanotech/jellybeans.vim'
+Plug 'arzg/vim-colors-xcode'
+Plug 'jonathanfilip/vim-lucius'
+
+Plug 'inkarkat/vim-ReplaceWithRegister'
+Plug 'tpope/vim-commentary'
+Plug 'machakann/vim-highlightedyank'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" plug#end() automatically executes filetype plugin indent on and syntax enable
+call plug#end()
+
+" [Settings]
+let mapleader=" "
+set mouse=a
+set clipboard^=unnamed
+colorscheme slate
+
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set textwidth=80
+set number
+set hlsearch incsearch
+if has('termguicolors')
+	set termguicolors
+endif
+
+" [Mappings] - nnoremap applies only to normal mode
+nmap <silent> <C-l> :noh<CR>
+nmap <silent> <C-p> :bprev<CR>
+nmap <silent> <C-n> :bnext<CR>
+" FZF
+nmap <silent> <Leader><Leader> :Buffers<CR>
+nmap <silent> - :Files<CR>
+
+" cool schemes:
+" slate, retrobox, desert, habamax, wildcharm,
+" need: ripgrep, fzf, bat, curl
