@@ -50,8 +50,6 @@ function! s:GlobalOverwrites()
 	highlight! link markdownH4 Special
 	highlight! link markdownH5 Special
 	highlight! link markdownH6 Special
-	highlight! link LspDiagSignErrorText SpellBad
-	highlight! link LspDiagSignWarningText SpellCap
 	highlight! link LspDiagInlineInfo NONE
 	highlight! link LspDiagInlineHint NONE
 	highlight! link LspDiagSignInfoText NONE
@@ -113,35 +111,6 @@ augroup END
 if exists('g:colors_name')
   call s:ColorOverwrites()
 endif
-
-" Highlighting
-
-" highlight! Pmenu       guibg=#272822 guifg=#f8f8f2
-" highlight! PmenuSel    guibg=#75715e guifg=#f8f8f2
-" highlight! PmenuThumb  guibg=#49483e guifg=#f8f8f2
-" highlight! Special     guibg=#272822 guifg=#75715e
-" highlight! link Pmenu LineNr
-" highlight! link PmenuSel StatusLine
-" highlight! link StatusLineNC LineNr
-" highlight! link PmenuThumb LineNr
-
-" augroup CustomLSPHighlights
-  " autocmd!
-  " autocmd ColorScheme * highlight link LspDiagSignErrorText SpellBad
-  " autocmd ColorScheme * highlight link LspDiagSignWarningText SpellCap
-  " autocmd ColorScheme * highlight link LspDiagInlineInfo NONE
-  " autocmd ColorScheme * highlight link LspDiagInlineHint NONE
-  " autocmd ColorScheme * highlight link LspDiagSignInfoText NONE
-  " autocmd ColorScheme * highlight link LspDiagSignHintText NONE
-	" autocmd ColorScheme * highlight link markdownCodeBlock String
-	" autocmd ColorScheme * highlight link markdownCode String
-	" autocmd ColorScheme * highlight link markdownH1 Special
-	" autocmd ColorScheme * highlight link markdownH2 Special
-	" autocmd ColorScheme * highlight link markdownH3 Special
-	" autocmd ColorScheme * highlight link markdownH4 Special
-	" autocmd ColorScheme * highlight link markdownH5 Special
-	" autocmd ColorScheme * highlight link markdownH6 Special
-" augroup END
 
 let lspOpts = #{autoHighlightDiags: v:true}
 autocmd User LspSetup call LspOptionsSet(lspOpts)
